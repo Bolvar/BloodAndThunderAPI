@@ -54,12 +54,12 @@ $ curl --request GET --url http://api.flako.xyz/class
 
 Character Detail
 ```sh
-$ curl --request GET --url 'http://api.flako.xyz/character/:name'
+$ curl --request GET --url http://api.flako.xyz/character/:name
 ```
 
 Character Progress
 ```sh
-$ curl --request GET --url ' http://api.flako.xyz/charHistory/:name
+$ curl --request GET --url http://api.flako.xyz/charHistory/:name
 ```
 
 ### TODO
