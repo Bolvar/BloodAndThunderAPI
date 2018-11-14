@@ -1,0 +1,27 @@
+{
+  "name": "bntapi",
+  "version": "1.0.0",
+  "description": "Blood and Thunder API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bolvar/BloodAndThunderRestify.git"
+  },
+  "author": "Marcelo Garrido",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bolvar/BloodAndThunderRestify/issues"
+  },
+  "homepage": "https://github.com/Bolvar/BloodAndThunderRestify#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "mysql": "^2.16.0",
+    "request": "^2.88.0",
+    "restify": "^7.2.2",
+    "restify-errors": "^6.1.1",
+    "restify-plugins": "^1.6.0"
+  }
+}
