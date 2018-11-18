@@ -26,13 +26,13 @@ server.listen(config.port, function () {
   console.log(`${config.name} listening at ${config.hostname}:${config.port}`);
 });
 
-server.get('/class', (req, res) => {
-  wowDb.getClassResume()
+
+
+server.get('/character/:name/history', (req, res) => {
+  const character = req.params.name;
+  wowDb.getPlayerHistory(character)
     .then(results => {
       try {
-        (results).forEach((value, index) => {
-          results[index].class = classArray[value.class];
-        })
         res.json(results);
       }
       catch (error) {
@@ -121,3 +121,17 @@ server.get('/guild', (req, res) => {
     });
 });
 
+server.get('/guild/class', (req, res) => {
+  wowDb.getClassResume()
+    .then(results => {
+      try {
+        (results).forEach((value, index) => {
+          results[index].class = classArray[value.class];
+        })
+        res.json(results);
+      }
+      catch (error) {
+        throw Error(error);
+      }
+    });
+});

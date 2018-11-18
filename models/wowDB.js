@@ -18,8 +18,21 @@ wowDb.getClassResume = () => {
 //the idea is return json data about player progres, so we can put in on a chart and see how faster do we grow
 wowDb.getPlayerHistory = (player) => {
   return new Promise((resolve, reject) => {
-    sql = `SELECT lastModified,level, achievementPoints, totalHonorableKills, averageItemLevelEquipped FROM player WHERE name = '${player.name}' ORDER BY lastModified DESC`
-    return;
+    sql = `SELECT lastModified,level, achievementPoints, totalHonorableKills, averageItemLevelEquipped FROM player WHERE name = '${player}' ORDER BY lastModified ASC`
+    connection.query(sql, (error, results, fields) => {
+      if (error) {
+        reject({
+          error: true,
+          message: error
+        });
+      }
+      else {
+        resolve({
+          error: false,
+          message: {name: player, results}
+        });
+      }
+    });
   })
 }
 //this is just to avoid insert data that i already have in database
