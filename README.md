@@ -8,7 +8,7 @@ BloodAndThunder requires [Node.js](https://nodejs.org/) to run.
 Install the dependencies
 
 ```sh
-$ git clone https://github.com/Bolvar/BloodAndThunderRestify.git <projectName>
+$ git clone https://github.com/Bolvar/BloodAndThunderAPI.git <projectName>
 $ cd <projectName>
 $ npm install
 ```
@@ -49,7 +49,7 @@ $ curl --request GET --url http://api.flako.xyz/guild
 
 Class Statistics
 ```sh
-$ curl --request GET --url http://api.flako.xyz/class
+$ curl --request GET --url http://api.flako.xyz/guild/class
 ```
 
 Character Detail
@@ -59,7 +59,7 @@ $ curl --request GET --url http://api.flako.xyz/character/:name
 
 Character Progress
 ```sh
-$ curl --request GET --url http://api.flako.xyz/charHistory/:name
+$ curl --request GET --url http://api.flako.xyz/character/:name/history
 ```
 
 ### TODO
