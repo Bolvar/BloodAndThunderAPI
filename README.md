@@ -8,7 +8,7 @@ BloodAndThunder requires [Node.js](https://nodejs.org/) to run.
 Install the dependencies
 
 ```sh
-$ git clone https://github.com/Bolvar/BloodAndThunderRestify.git <projectName>
+$ git clone https://github.com/Bolvar/BloodAndThunderAPI.git <projectName>
 $ cd <projectName>
 $ npm install
 ```
