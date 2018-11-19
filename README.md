@@ -18,20 +18,30 @@ create ./config.js
 ```js
 var mysql = require('mysql');
 module.exports = {
-  name: 'rest-api',
-  hostname: 'hostname',
-  version: '0.0.1',
-  env: process.env.NODE_ENV || 'development',
-  port: 3000,
-  apiKey: 'blizzardApiKey'
-  db: {
-    get: mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: 'password',
-      database: 'database'
-    })
-  }
+    name: 'rest-api',
+    hostname: 'hostname',
+    version: '0.0.1',
+    env: process.env.NODE_ENV || 'development',
+    port: 3000,
+    oauth: {
+        _accessToken: "",
+        get accessToken() {
+            return this._accessToken;
+        },
+        set accessToken(value) {
+            this._accessToken = value;
+        },
+        public: "Client ID",
+        secret: "Client Secret",
+    },
+    db: {
+        get: mysql.createConnection({
+          host: 'localhost',
+          user: 'root',
+          password: 'password',
+          database: 'database'
+        })
+    }
 }
 ```
 #### Step three
@@ -60,6 +70,11 @@ $ curl --request GET --url http://api.flako.xyz/character/:name
 Character Progress
 ```sh
 $ curl --request GET --url http://api.flako.xyz/character/:name/history
+```
+
+Token Status
+```sh
+$ curl --request GET --url http://api.flako.xyz/token
 ```
 
 ### TODO
